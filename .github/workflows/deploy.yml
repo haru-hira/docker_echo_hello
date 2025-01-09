@@ -25,9 +25,9 @@ jobs:
       - name: Login
         run: |
           echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ env.RELEASE_OWNER }} --password-stdin
-#      - name: Push by tag name
-#        run: |
-#          docker push ghcr.io/${{ env.RELEASE_OWNER }}/${{ env.RELEASE_IMAGE }}:${{ env.RELEASE_VERSION }}
+      - name: Push by tag name
+        run: |
+          docker push ghcr.io/${{ env.RELEASE_OWNER }}/${{ env.RELEASE_IMAGE }}:${{ env.RELEASE_VERSION }}
 #      - name: Push by latest
 #        run: |
 #          docker image tag ghcr.io/${{ env.RELEASE_OWNER }}/${{ env.RELEASE_IMAGE }}:${{ env.RELEASE_VERSION }} ghcr.io/${{ env.RELEASE_OWNER }}/${{ env.RELEASE_IMAGE }}:latest
