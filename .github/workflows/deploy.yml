@@ -17,7 +17,7 @@ jobs:
           echo "RELEASE_OWNER=$OWNER" >> $GITHUB_ENV
           IMAGE=docker_echo_hello
           echo "RELEASE_IMAGE=$IMAGE" >> $GITHUB_ENV
-          VERSION=$(echo ${{ github.ref }} | sed -e "s#refs/tags/##g")
+          VERSION=$(echo ${{ github.run_id }})
           echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
       - name: Build
         run: |
